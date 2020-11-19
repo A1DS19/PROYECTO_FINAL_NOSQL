@@ -24,7 +24,7 @@ function Cart({ match, location, history }) {
 
   const removeItemCart = (id) => {
     dispatch(removeFromCart(id));
-    toast.success('Item removido con exito');
+    toast.info('Item removido con exito');
   };
 
   const checkOut = () => {
