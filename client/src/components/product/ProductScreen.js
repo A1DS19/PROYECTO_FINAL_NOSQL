@@ -27,7 +27,7 @@ function ProductScreen({ match, history }) {
 
   const addToWishlistHandler = (id, wishlistItems, status) => {
     dispatch(addToWishlist(id, wishlistItems, status));
-    toast.success('Producto agregado a wishlist');
+    toast.info('Producto agregado a wishlist');
   };
 
   return (

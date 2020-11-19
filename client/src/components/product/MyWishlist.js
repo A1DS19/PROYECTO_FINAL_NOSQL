@@ -19,8 +19,12 @@ function MyWishlist({ match }) {
   const { wishlist, errorMessage, loading } = wishlistData;
 
   const removeFromWishlist = (productid) => {
-    dispatch(delItemWishlist(userId, productid));
-    toast.success('Item removido de wishlist');
+    dispatch(
+      delItemWishlist(userId, productid, () => {
+        toast.info('Item removido de wishlist');
+        dispatch(getWishlist(userId));
+      })
+    );
   };
 
   const renderWishlist = () => {
