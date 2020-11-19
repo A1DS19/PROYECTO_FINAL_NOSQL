@@ -238,12 +238,13 @@ export const getWishlist = (id) => {
   };
 };
 
-export const delItemWishlist = (userid, productid) => {
+export const delItemWishlist = (userid, productid, callback) => {
   return async (dispatch) => {
     try {
       dispatch({ type: FETCH_WISHLIST_LOADING });
       const { data } = await axios.put(`/api/wishlist/${userid}/${productid}`);
       dispatch({ type: FETCH_WISHLIST_DETAILS, payload: data });
+      callback();
     } catch (error) {
       dispatch({ type: FETCH_WISHLIST_ERROR, payload: error.response.data.error });
     }
