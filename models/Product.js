@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 const { ReviewSchema } = require('./Review.js');
-const { CategorySchema } = require('./Categories');
+const { CategorieSchema } = require('./Categorie');
 
 const ProductSchema = new Schema(
   {
@@ -26,7 +26,7 @@ const ProductSchema = new Schema(
       type: Number,
     },
     reviews: [ReviewSchema],
-    category: { CategorySchema },
+    category: { CategorieSchema },
   },
   { timestamps: true }
 );
